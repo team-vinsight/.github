@@ -8,40 +8,34 @@ University of Moratuwa
 
 ---
 
-## 📖 Project Overview
+## � Project Overview
 
-Unmanned Aerial Vehicles (UAVs) are rapidly transforming industries like agriculture, logistics, and surveillance. However, their reliable operation often depends on GPS, which is prone to failure in "GPS-restricted" environments such as urban canyons, indoor facilities, and dense forests.
+We develop a robust **Visual-Inertial Navigation System (VINS)** for autonomous UAVs in GPS-denied environments. By fusing camera and IMU data, our system ensures precise localization where GPS fails (e.g., indoors, urban canyons) and employs deep learning to filter dynamic objects (like people and vehicles) for enhanced stability.
 
-This project proposes a robust **Visual-Inertial Navigation System (VINS)** specifically engineered for autonomous UAV operation in these challenging scenarios. By integrating visual data from onboard cameras with inertial measurements from IMUs, our system enables precise localization and navigation without relying on external satellite signals.
+## 🎯 Key Objectives
 
-## ⚠️ Problem Statement
+*   **GPS-Denied Navigation:** Reliable localization using hybrid Visual-Inertial Odometry (VIO).
+*   **Dynamic Robustness:** Masking moving objects to prevent tracking errors in complex scenes.
+*   **Embedded Efficiency:** Optimized for real-time performance on NVIDIA Jetson platforms.
+*   **Drift Minimization:** Advanced sensor fusion to correct inherent IMU drift.
 
-Standard GPS-based navigation fails in environments with signal obstruction, multipath propagation, or interference. While visual and inertial systems offer an alternative, they face significant challenges:
-*   **IMU Drift:** Inertial sensors accumulate error over time, leading to unbounded trajectory drift.
-*   **Dynamic Environments:** Moving objects and low-texture scenes confuse traditional visual tracking algorithms.
-*   **Computational Constraints:** Running sophisticated SLAM (Simultaneous Localization and Mapping) algorithms on onboard UAV hardware is resource-intensive.
+## 🛠️ Tech Stack
 
-## 💡 Proposed Solution
+*   **Hardware:** NVIDIA Jetson Orin NX, Stereo Cameras, IMU.
+*   **Software:** ROS 2 Humble, PX4 Autopilot, OpenCV, PyTorch.
+*   **Algorithms:** ORB-SLAM3 / cuVSLAM, YOLO (Object Detection).
 
-We are developing a hybrid, optimization-based VINS that combines:
-1.  **Geometric SLAM:** Leveraging **ORB-SLAM3** for utilizing its state-of-the-art accuracy and efficiency in static environments.
-2.  **Deep Learning:** Augmenting the geometric backbone with a lightweight object detection model (e.g., YOLO variants) to identify and mask dynamic objects (people, vehicles) that would otherwise corrupt the mapping process.
+## 📂 Key Repositories
 
-This approach ensures "best of both worlds" performance: the precision of geometric methods and the semantic understanding of modern AI, all optimized to run in real-time on embedded hardware.
+### 🏗️ Core Systems
+*   [**drone_ws**](https://github.com/team-vinsight/drone_ws): The main **ROS 2 workspace** containing the complete autonomous flight stack, integrating navigation, control, and customized drivers.
+*   [**pycuvslam**](https://github.com/team-vinsight/pycuvslam): Core Python implementation/bindings for the Visual-Inertial SLAM backend.
+*   [**pycuvslam-ros2-wrapper**](https://github.com/team-vinsight/pycuvslam-ros2-wrapper): ROS 2 node wrapper for `pycuvslam` to interface with the rest of the drone system.
 
-## 🎯 Research Objectives
-
-1.  **Minimize IMU Drift:** Effective fusion of visual and inertial data to maintain stable localization.
-2.  **Robust Visual Tracking:** Enhance performance in low-texture and dynamic environments.
-3.  **Real-Time Performance:** Optimize algorithms to run efficiently on resource-constrained platforms (e.g., NVIDIA Jetson).
-4.  **Environmental Resilience:** Improve system stability under poor lighting and motion blur conditions.
-
-## 🛠️ Technology Stack
-
-*   **Hardware:** NVIDIA Jetson Orin NX (8GB), Stereo/Mono Cameras, IMU.
-*   **Flight Stack:** PX4 Autopilot, MAVLink, MAVSDK/MAVROS.
-*   **Software framework:** ROS 2 (Humble), OpenCV, Eigen, Ceres/G2O.
-*   **Core Algorithms:** ORB-SLAM3 (VIO mode), YOLO-Tiny/Nano for object detection.
+### 📚 Documentation & Hardware
+*   [**project-proposal**](https://github.com/team-vinsight/project-proposal): LaTeX source code and PDF releases of the official project proposal and research goals.
+*   [**siyi_cam**](https://github.com/team-vinsight/siyi_cam): ROS 2 driver for controlling the SIYI A8 Mini gimbal and streaming video.
+*   [**knowledge-base**](https://github.com/team-vinsight/knowledge-base): Collection of reference papers, literature reviews, and learning resources.
 
 ## 👥 Team Members
 
