@@ -29,12 +29,13 @@ We develop a robust **Visual-Inertial Navigation System (VINS)** for autonomous 
 
 ### 🏗️ Core Systems
 *   [**drone_ws**](https://github.com/team-vinsight/drone_ws): The main **ROS 2 workspace** containing the complete autonomous flight stack, integrating navigation, control, and customized drivers.
-*   [**pycuvslam**](https://github.com/team-vinsight/pycuvslam): Core Python implementation/bindings for the Visual-Inertial SLAM backend.
+
+### 🔬 Innovations & Enhancements
+*   [**pycuvslam**](https://github.com/team-vinsight/pycuvslam): Fork of **NVIDIA's pycuvslam**, extended with support for custom datasets and new camera sensors.
 *   [**pycuvslam-ros2-wrapper**](https://github.com/team-vinsight/pycuvslam-ros2-wrapper): ROS 2 node wrapper for `pycuvslam` to interface with the rest of the drone system.
 
-### 📚 Documentation & Hardware
+### 📚 Documentation
 *   [**project-proposal**](https://github.com/team-vinsight/project-proposal): LaTeX source code and PDF releases of the official project proposal and research goals.
-*   [**siyi_cam**](https://github.com/team-vinsight/siyi_cam): ROS 2 driver for controlling the SIYI A8 Mini gimbal and streaming video.
 *   [**knowledge-base**](https://github.com/team-vinsight/knowledge-base): Collection of reference papers, literature reviews, and learning resources.
 
 ## 👥 Team Members
